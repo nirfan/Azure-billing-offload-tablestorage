@@ -1,0 +1,21 @@
+      +-------------------+
+      |  Client/Application|
+      +-------------------+
+                |
+        [Existing API Layer/Service]
+                |
+   +------------+-------------+
+   |                          |
++--------+             +----------------+
+| Cosmos |   [<3 months][ Table Storage |
+|  DB    |<----------->|   (Archival)   |
+| (Hot)  |             +----------------+
++--------+                ^
+      |                   |
+      +----+    Offload   + 
+           |  Automation  |
+           v              |
+   +---------------------------+
+   |   Azure Function/Logic    |
+   |   App/ADF for Migration   |
+   +---------------------------+
